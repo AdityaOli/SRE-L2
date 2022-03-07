@@ -7,7 +7,7 @@ variable primary_db_cluster_arn {}
    username             = "udacity"
    password             = "MyUdacityPassword"
    parameter_group_name = "default.mysql5.7"
-   multi-az             = true
+   multi_az             = true
    skip_final_snapshot  = true
  }
 resource "aws_rds_cluster_parameter_group" "cluster_pg-s" {
