@@ -50,13 +50,7 @@ resource "aws_rds_cluster" "udacity_cluster-s" {
   source_region            = "us-east-2"
   depends_on = [aws_rds_cluster_parameter_group.cluster_pg-s]
 }
-output "db_cluster_arn" {
-  value = aws_rds_cluster.udacity_cluster.arn
-}
 
-output "db_instance_arn" {
-  value = aws_rds_cluster_instance.udacity_instance[0].arn
-}
 
 resource "aws_rds_cluster_instance" "udacity_instance-s" {
   count                = 2

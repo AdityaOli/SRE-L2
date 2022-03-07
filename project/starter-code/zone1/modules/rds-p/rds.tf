@@ -1,6 +1,6 @@
  resource "aws_db_instance" "default" {
    allocated_storage    = 10
-  engine               = "mysql"
+   engine               = "mysql"
    engine_version       = "5.7"
    instance_class       = "db.t3.micro"
    username             = "udacity"
@@ -50,13 +50,7 @@ resource "aws_rds_cluster" "udacity_cluster" {
   depends_on = [aws_rds_cluster_parameter_group.cluster_pg]
 }
 
-output "db_cluster_arn" {
-  value = aws_rds_cluster.udacity_cluster.arn
-}
 
-output "db_instance_arn" {
-  value = aws_rds_cluster_instance.udacity_instance[0].arn
-}
 
 resource "aws_rds_cluster_instance" "udacity_instance" {
   count                = 2
