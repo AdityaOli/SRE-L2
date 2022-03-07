@@ -9,7 +9,7 @@
 
   module "project_ec2" {
    source             = "./modules/ec2"
-   instance_count     = var.instance_count
+   instance_count     = 3
    name               = local.name
    account            = data.aws_caller_identity.current.account_id
    aws_ami            = "ami-0fb5968bce0f2caed"
